@@ -1,0 +1,2 @@
+Instructions to use google maps API in Swift:
+https://github.com/googlemaps/google-maps-ios-utils/blob/master/Swift.md
