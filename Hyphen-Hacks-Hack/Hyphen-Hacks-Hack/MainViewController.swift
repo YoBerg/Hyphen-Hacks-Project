@@ -19,6 +19,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
     
     var currentCords: [Double?] = []
      
+    @IBOutlet weak var nameLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         locationManager.delegate = self
@@ -26,7 +27,9 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        lpollTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { (Timer) in
+        let dict = UserDefaults.standard.object(forKey: "user") as! [String: Any]
+        self.nameLabel.text = dict["name"] as? String
+        lpollTimer = Timer.scheduledTimer(withTimeInterval: 5, repeats: true) { (Timer) in
             Alamofire.request(Constants.serverURL.serverURL, method: .post, parameters: [:], headers: ["natdis-lpoll":""]).responseString(completionHandler: { (response:DataResponse<String>) in
                 if (response.description == "SUCCESS: True") {
                     self.locationManager.requestLocation()

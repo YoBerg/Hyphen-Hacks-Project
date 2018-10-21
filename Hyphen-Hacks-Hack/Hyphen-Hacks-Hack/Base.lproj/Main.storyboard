@@ -250,11 +250,19 @@
                                     <action selector="resetUserDefaults:" destination="Acs-k5-dBw" eventType="touchUpInside" id="Pek-Eu-Jpx"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Vo-C7-HfV">
+                                <rect key="frame" x="166" y="56" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="UGL-X8-H6f"/>
                     </view>
                     <connections>
+                        <outlet property="nameLabel" destination="5Vo-C7-HfV" id="wpC-dr-Am3"/>
                         <segue destination="0km-sf-kul" kind="show" identifier="areYouOkay" id="x4t-ga-jRr"/>
                         <segue destination="P9j-Jz-KBs" kind="unwind" identifier="unwindToHomeSegue" unwindAction="unwindToHomeWithSegue:" id="rmQ-8M-Udn"/>
                     </connections>
