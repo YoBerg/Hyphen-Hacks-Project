@@ -7,15 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B88699E53AEA4BF13326EE7C /* Pods_Hyphen_Hacks_Hack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F2BD2D81D820CF6771636AF /* Pods_Hyphen_Hacks_Hack.framework */; };
 		FA162187217BB4AF0015E259 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA162186217BB4AF0015E259 /* AppDelegate.swift */; };
 		FA162189217BB4AF0015E259 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA162188217BB4AF0015E259 /* ViewController.swift */; };
 		FA16218C217BB4AF0015E259 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA16218A217BB4AF0015E259 /* Main.storyboard */; };
 		FA16218F217BB4AF0015E259 /* Hyphen_Hacks_Hack.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA16218D217BB4AF0015E259 /* Hyphen_Hacks_Hack.xcdatamodeld */; };
 		FA162191217BB4B10015E259 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA162190217BB4B10015E259 /* Assets.xcassets */; };
 		FA162194217BB4B10015E259 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA162192217BB4B10015E259 /* LaunchScreen.storyboard */; };
+		FA16219E217BEC6C0015E259 /* HTTPHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA16219D217BEC6C0015E259 /* HTTPHandler.swift */; };
+		FA1621A0217BEEFD0015E259 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA16219F217BEEFD0015E259 /* RegisterViewController.swift */; };
+		FA1621A2217BFCCE0015E259 /* ClosableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1621A1217BFCCE0015E259 /* ClosableTextField.swift */; };
+		FA1621A6217C0B000015E259 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1621A5217C0B000015E259 /* MainViewController.swift */; };
+		FA1621A8217C25B70015E259 /* CheckStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1621A7217C25B70015E259 /* CheckStatusViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0BF8C9CD8F0E39DCDDDC2514 /* Pods-Hyphen-Hacks-Hack.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hyphen-Hacks-Hack.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hyphen-Hacks-Hack/Pods-Hyphen-Hacks-Hack.debug.xcconfig"; sourceTree = "<group>"; };
+		5F2BD2D81D820CF6771636AF /* Pods_Hyphen_Hacks_Hack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hyphen_Hacks_Hack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6988BFE2EA6AA1EEDEAC0E16 /* Pods-Hyphen-Hacks-Hack.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hyphen-Hacks-Hack.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hyphen-Hacks-Hack/Pods-Hyphen-Hacks-Hack.release.xcconfig"; sourceTree = "<group>"; };
 		FA162183217BB4AF0015E259 /* Hyphen-Hacks-Hack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Hyphen-Hacks-Hack.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA162186217BB4AF0015E259 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA162188217BB4AF0015E259 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +33,11 @@
 		FA162190217BB4B10015E259 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA162193217BB4B10015E259 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA162195217BB4B10015E259 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA16219D217BEC6C0015E259 /* HTTPHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPHandler.swift; sourceTree = "<group>"; };
+		FA16219F217BEEFD0015E259 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		FA1621A1217BFCCE0015E259 /* ClosableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosableTextField.swift; sourceTree = "<group>"; };
+		FA1621A5217C0B000015E259 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		FA1621A7217C25B70015E259 /* CheckStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckStatusViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +45,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B88699E53AEA4BF13326EE7C /* Pods_Hyphen_Hacks_Hack.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A0ADBF0560B45649C988A19 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0BF8C9CD8F0E39DCDDDC2514 /* Pods-Hyphen-Hacks-Hack.debug.xcconfig */,
+				6988BFE2EA6AA1EEDEAC0E16 /* Pods-Hyphen-Hacks-Hack.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		3D5580DFA9D1390BE4E53152 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5F2BD2D81D820CF6771636AF /* Pods_Hyphen_Hacks_Hack.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FA16217A217BB4AF0015E259 = {
 			isa = PBXGroup;
 			children = (
 				FA162185217BB4AF0015E259 /* Hyphen-Hacks-Hack */,
 				FA162184217BB4AF0015E259 /* Products */,
+				3A0ADBF0560B45649C988A19 /* Pods */,
+				3D5580DFA9D1390BE4E53152 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -59,10 +93,15 @@
 				FA162186217BB4AF0015E259 /* AppDelegate.swift */,
 				FA162188217BB4AF0015E259 /* ViewController.swift */,
 				FA16218A217BB4AF0015E259 /* Main.storyboard */,
+				FA16219F217BEEFD0015E259 /* RegisterViewController.swift */,
 				FA162190217BB4B10015E259 /* Assets.xcassets */,
 				FA162192217BB4B10015E259 /* LaunchScreen.storyboard */,
 				FA162195217BB4B10015E259 /* Info.plist */,
 				FA16218D217BB4AF0015E259 /* Hyphen_Hacks_Hack.xcdatamodeld */,
+				FA16219D217BEC6C0015E259 /* HTTPHandler.swift */,
+				FA1621A1217BFCCE0015E259 /* ClosableTextField.swift */,
+				FA1621A5217C0B000015E259 /* MainViewController.swift */,
+				FA1621A7217C25B70015E259 /* CheckStatusViewController.swift */,
 			);
 			path = "Hyphen-Hacks-Hack";
 			sourceTree = "<group>";
@@ -74,9 +113,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FA162198217BB4B10015E259 /* Build configuration list for PBXNativeTarget "Hyphen-Hacks-Hack" */;
 			buildPhases = (
+				FF42943BA7D1DB7468B70D15 /* [CP] Check Pods Manifest.lock */,
 				FA16217F217BB4AF0015E259 /* Sources */,
 				FA162180217BB4AF0015E259 /* Frameworks */,
 				FA162181217BB4AF0015E259 /* Resources */,
+				10BC68A3A2D244347E92B6D9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -99,6 +140,11 @@
 				TargetAttributes = {
 					FA162182217BB4AF0015E259 = {
 						CreatedOnToolsVersion = 10.0;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -133,13 +179,57 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		10BC68A3A2D244347E92B6D9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Hyphen-Hacks-Hack/Pods-Hyphen-Hacks-Hack-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Hyphen-Hacks-Hack/Pods-Hyphen-Hacks-Hack-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FF42943BA7D1DB7468B70D15 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Hyphen-Hacks-Hack-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FA16217F217BB4AF0015E259 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA1621A6217C0B000015E259 /* MainViewController.swift in Sources */,
 				FA16218F217BB4AF0015E259 /* Hyphen_Hacks_Hack.xcdatamodeld in Sources */,
+				FA1621A0217BEEFD0015E259 /* RegisterViewController.swift in Sources */,
+				FA1621A8217C25B70015E259 /* CheckStatusViewController.swift in Sources */,
 				FA162189217BB4AF0015E259 /* ViewController.swift in Sources */,
+				FA16219E217BEC6C0015E259 /* HTTPHandler.swift in Sources */,
+				FA1621A2217BFCCE0015E259 /* ClosableTextField.swift in Sources */,
 				FA162187217BB4AF0015E259 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -284,6 +374,7 @@
 		};
 		FA162199217BB4B10015E259 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0BF8C9CD8F0E39DCDDDC2514 /* Pods-Hyphen-Hacks-Hack.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -302,6 +393,7 @@
 		};
 		FA16219A217BB4B10015E259 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6988BFE2EA6AA1EEDEAC0E16 /* Pods-Hyphen-Hacks-Hack.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
