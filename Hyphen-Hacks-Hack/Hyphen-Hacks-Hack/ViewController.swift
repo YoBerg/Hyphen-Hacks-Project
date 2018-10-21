@@ -7,14 +7,17 @@
 //
 
 import UIKit
+import Alamofire
 
-class ViewController: UIViewController {
-
+class LaunchViewController: UIViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        let dict = UserDefaults.standard.object(forKey: "user") as? [String: String]
+        print(dict as Any)
+        if (dict != nil) {
+            print("user exists")
+            performSegue(withIdentifier: "userExists", sender: self)
+        }
     }
-
-
 }
-

@@ -14,6 +14,11 @@
 		FA16218F217BB4AF0015E259 /* Hyphen_Hacks_Hack.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA16218D217BB4AF0015E259 /* Hyphen_Hacks_Hack.xcdatamodeld */; };
 		FA162191217BB4B10015E259 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA162190217BB4B10015E259 /* Assets.xcassets */; };
 		FA162194217BB4B10015E259 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA162192217BB4B10015E259 /* LaunchScreen.storyboard */; };
+		FA16219E217BEC6C0015E259 /* HTTPHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA16219D217BEC6C0015E259 /* HTTPHandler.swift */; };
+		FA1621A0217BEEFD0015E259 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA16219F217BEEFD0015E259 /* RegisterViewController.swift */; };
+		FA1621A2217BFCCE0015E259 /* ClosableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1621A1217BFCCE0015E259 /* ClosableTextField.swift */; };
+		FA1621A6217C0B000015E259 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1621A5217C0B000015E259 /* MainViewController.swift */; };
+		FA1621A8217C25B70015E259 /* CheckStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1621A7217C25B70015E259 /* CheckStatusViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +33,11 @@
 		FA162190217BB4B10015E259 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA162193217BB4B10015E259 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FA162195217BB4B10015E259 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA16219D217BEC6C0015E259 /* HTTPHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPHandler.swift; sourceTree = "<group>"; };
+		FA16219F217BEEFD0015E259 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		FA1621A1217BFCCE0015E259 /* ClosableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClosableTextField.swift; sourceTree = "<group>"; };
+		FA1621A5217C0B000015E259 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		FA1621A7217C25B70015E259 /* CheckStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckStatusViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,10 +93,15 @@
 				FA162186217BB4AF0015E259 /* AppDelegate.swift */,
 				FA162188217BB4AF0015E259 /* ViewController.swift */,
 				FA16218A217BB4AF0015E259 /* Main.storyboard */,
+				FA16219F217BEEFD0015E259 /* RegisterViewController.swift */,
 				FA162190217BB4B10015E259 /* Assets.xcassets */,
 				FA162192217BB4B10015E259 /* LaunchScreen.storyboard */,
 				FA162195217BB4B10015E259 /* Info.plist */,
 				FA16218D217BB4AF0015E259 /* Hyphen_Hacks_Hack.xcdatamodeld */,
+				FA16219D217BEC6C0015E259 /* HTTPHandler.swift */,
+				FA1621A1217BFCCE0015E259 /* ClosableTextField.swift */,
+				FA1621A5217C0B000015E259 /* MainViewController.swift */,
+				FA1621A7217C25B70015E259 /* CheckStatusViewController.swift */,
 			);
 			path = "Hyphen-Hacks-Hack";
 			sourceTree = "<group>";
@@ -125,6 +140,11 @@
 				TargetAttributes = {
 					FA162182217BB4AF0015E259 = {
 						CreatedOnToolsVersion = 10.0;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -167,11 +187,13 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Hyphen-Hacks-Hack/Pods-Hyphen-Hacks-Hack-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/SwiftSocket/SwiftSocket.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSocket.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -203,8 +225,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA1621A6217C0B000015E259 /* MainViewController.swift in Sources */,
 				FA16218F217BB4AF0015E259 /* Hyphen_Hacks_Hack.xcdatamodeld in Sources */,
+				FA1621A0217BEEFD0015E259 /* RegisterViewController.swift in Sources */,
+				FA1621A8217C25B70015E259 /* CheckStatusViewController.swift in Sources */,
 				FA162189217BB4AF0015E259 /* ViewController.swift in Sources */,
+				FA16219E217BEC6C0015E259 /* HTTPHandler.swift in Sources */,
+				FA1621A2217BFCCE0015E259 /* ClosableTextField.swift in Sources */,
 				FA162187217BB4AF0015E259 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
