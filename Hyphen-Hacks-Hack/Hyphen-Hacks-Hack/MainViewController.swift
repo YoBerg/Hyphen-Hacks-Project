@@ -27,6 +27,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        createGradientLayer()
         let dict = UserDefaults.standard.object(forKey: "user") as! [String: Any]
         self.nameLabel.text = dict["name"] as? String
         lpollTimer = Timer.scheduledTimer(withTimeInterval: 5, repeats: true) { (Timer) in
@@ -91,4 +92,19 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print(error)
     }
+    var gradientLayer: CAGradientLayer!
+    @IBOutlet weak var gradientView: UIView!
+    
+    func createGradientLayer() {
+        gradientLayer = CAGradientLayer()
+        gradientLayer.frame = self.view.bounds
+        
+        
+        let grey = UIColor(red: 153/255.0, green: 153/255.0, blue: 153/255.0, alpha: 1)
+        let blue = UIColor(red: 214/255.0, green: 228/255.0, blue: 255/255.0, alpha: 1)
+        
+        gradientLayer.colors = [grey.cgColor, blue.cgColor]
+        gradientView.layer.addSublayer(gradientLayer)
+    }
+    
 }
