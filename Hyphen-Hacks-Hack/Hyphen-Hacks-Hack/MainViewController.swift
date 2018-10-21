@@ -101,7 +101,8 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
         
         
         let grey = UIColor(red: 153/255.0, green: 153/255.0, blue: 153/255.0, alpha: 1)
-        let blue = UIColor(red: 214/255.0, green: 228/255.0, blue: 255/255.0, alpha: 1)
+//        let blue = UIColor(red: 214/255.0, green: 228/255.0, blue: 255/255.0, alpha: 1)
+        let blue = UIColor(red: 170/255.0, green: 200/255.0, blue: 255/255.0, alpha: 1)
         
         gradientLayer.colors = [grey.cgColor, blue.cgColor]
         gradientView.layer.addSublayer(gradientLayer)
