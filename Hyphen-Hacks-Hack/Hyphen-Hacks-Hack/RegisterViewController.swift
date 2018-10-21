@@ -29,6 +29,7 @@ class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPicker
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        createGradientLayer()
         bloodTypePickerView.dataSource = self
         bloodTypePickerView.delegate = self
     }
@@ -55,6 +56,21 @@ class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPicker
                 self.performSegue(withIdentifier: "saveComplete", sender: self)
             }
         }
+    }
+    
+    @IBOutlet weak var gradientView: UIView!
+    var gradientLayer: CAGradientLayer!
+    
+    func createGradientLayer() {
+        gradientLayer = CAGradientLayer()
+        gradientLayer.frame = self.view.bounds
+        
+
+        let grey = UIColor(red: 153/255.0, green: 153/255.0, blue: 153/255.0, alpha: 1)
+        let yellow = UIColor(red: 247/255.0, green: 247/255.0, blue: 195/255.0, alpha: 1)
+        
+        gradientLayer.colors = [yellow.cgColor, grey.cgColor]
+        gradientView.layer.addSublayer(gradientLayer)
     }
     
     @IBAction func unwindWithSegue(segue: UIStoryboardSegue) {
