@@ -29,13 +29,15 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
     override func viewWillAppear(_ animated: Bool) {
         createGradientLayer()
         let dict = UserDefaults.standard.object(forKey: "user") as! [String: Any]
+        let id: String = dict["id"] as! String
         self.nameLabel.text = dict["name"] as? String
         lpollTimer = Timer.scheduledTimer(withTimeInterval: 5, repeats: true) { (Timer) in
-            Alamofire.request(Constants.serverURL.serverURL, method: .post, parameters: [:], headers: ["natdis-lpoll":""]).responseString(completionHandler: { (response:DataResponse<String>) in
+            Alamofire.request(Constants.serverURL.serverURL, method: .post, parameters: [:], headers: ["natdis-lpoll":"","natdis-id":id]).responseString(completionHandler: { (response:DataResponse<String>) in
                 if (response.description == "SUCCESS: True") {
                     self.locationManager.requestLocation()
                 }
-                print(response.description)
+                print("sending id",id)
+                print("lpoll-response:",response.description)
             })
         }
         

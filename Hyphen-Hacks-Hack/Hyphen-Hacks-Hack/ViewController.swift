@@ -35,4 +35,14 @@ class LaunchViewController: UIViewController {
         gradientView.layer.addSublayer(gradientLayer)
     }
     @IBAction func unwindToHome(segue:UIStoryboardSegue) { }
+    
+    @IBAction func linkButtonPressed(_ sender: Any) {
+        if let url = URL(string: "https://hackathon-nat-dis-hkibur.c9users.io/#") {
+            UIApplication.shared.open(url, options: [:]) {
+                boolean in
+                // do something with the boolean
+            }
+        }
+    }
+    
 }
