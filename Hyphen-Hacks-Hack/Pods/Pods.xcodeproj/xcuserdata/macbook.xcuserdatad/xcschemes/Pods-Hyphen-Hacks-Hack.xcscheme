@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "02B2F1738BB04086F643EA72E0EA8D8F"
+               BlueprintIdentifier = "D85248DDDCCC95C2C2BE8A25B1D5D97C"
                BuildableName = "Pods_Hyphen_Hacks_Hack.framework"
                BlueprintName = "Pods-Hyphen-Hacks-Hack"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "02B2F1738BB04086F643EA72E0EA8D8F"
+            BlueprintIdentifier = "D85248DDDCCC95C2C2BE8A25B1D5D97C"
             BuildableName = "Pods_Hyphen_Hacks_Hack.framework"
             BlueprintName = "Pods-Hyphen-Hacks-Hack"
             ReferencedContainer = "container:Pods.xcodeproj">

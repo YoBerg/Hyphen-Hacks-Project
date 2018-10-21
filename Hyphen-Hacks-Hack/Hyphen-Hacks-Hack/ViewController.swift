@@ -20,4 +20,6 @@ class LaunchViewController: UIViewController {
             performSegue(withIdentifier: "userExists", sender: self)
         }
     }
+    
+    @IBAction func unwindToHome(segue:UIStoryboardSegue) { }
 }

@@ -8,18 +8,38 @@
 
 import UIKit
 import Alamofire
+import CoreLocation
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, CLLocationManagerDelegate {
     
     var lpollTimer: Timer? = nil
+    var checkUserTimer: Timer? = nil
     
+    let locationManager = CLLocationManager()
+    
+    var currentCords: [Double?] = []
+     
     override func viewDidLoad() {
         super.viewDidLoad()
+        locationManager.delegate = self
+        locationManager.requestWhenInUseAuthorization()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         lpollTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { (Timer) in
             Alamofire.request(Constants.serverURL.serverURL, method: .post, parameters: [:], headers: ["natdis-lpoll":""]).responseString(completionHandler: { (response:DataResponse<String>) in
-                print("Received lpoll")
-                self.goToAreYouOkay()
+                if (response.description == "SUCCESS: True") {
+                    self.locationManager.requestLocation()
+                }
+                print(response.description)
             })
+        }
+        
+        checkUserTimer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) { (Timer) in
+            let dict = UserDefaults.standard.object(forKey: "user") as? [String: String]
+            if (dict == nil) {
+                self.returnToMain()
+            }
         }
     }
     
@@ -27,6 +47,16 @@ class MainViewController: UIViewController {
         self.performSegue(withIdentifier: "areYouOkay", sender: self)
         lpollTimer?.invalidate()
         lpollTimer = nil
+        checkUserTimer?.invalidate()
+        checkUserTimer = nil
+    }
+    
+    func returnToMain() {
+        lpollTimer?.invalidate()
+        lpollTimer = nil
+        checkUserTimer?.invalidate()
+        checkUserTimer = nil
+        self.performSegue(withIdentifier: "unwindToHomeSegue", sender: self)
     }
     
     @IBAction func resetUserDefaults(_ sender: Any) {
@@ -35,4 +65,27 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func unwindToVC1(segue:UIStoryboardSegue) { }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        if let lat = locations.last?.coordinate.latitude, let long = locations.last?.coordinate.longitude {
+            currentCords = [lat as Double,long as Double]
+            let lat: String = currentCords[0]?.description ?? ""
+            let long: String = currentCords[1]?.description ?? ""
+            let userDict: [String: Any] = UserDefaults.standard.object(forKey: "user") as! [String : Any]
+            let id: String = userDict["id"] as! String
+            Alamofire.request(Constants.serverURL.serverURL, method: .post, parameters: [:], headers: ["natdis-lat":lat,"natdis-long":long,"natdis-id":id])
+            print("sending coordinates",lat,long,"with id",id)
+        } else {
+            currentCords = []
+            let lat: String = currentCords[0]?.description ?? ""
+            let long: String = currentCords[1]?.description ?? ""
+            let userDict: [String: Any] = UserDefaults.standard.object(forKey: "user") as! [String : Any]
+            let id: String = userDict["id"] as! String
+            Alamofire.request(Constants.serverURL.serverURL, method: .post, parameters: [:], headers: ["natdis-lat":lat,"natdis-long":long,"natdis-id":id])
+            print("sending coordinates",lat,long,"with id",id)
+        }
+    }
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error)
+    }
 }

@@ -40,10 +40,12 @@ class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPicker
     @IBOutlet weak var ageTextField: ClosableTextField!
     @IBOutlet weak var homeAddressTextField: ClosableTextField!
     @IBOutlet weak var bloodTypePickerView: UIPickerView!
+    @IBOutlet weak var specneedsTextField: ClosableTextField!
+    @IBOutlet weak var otherTextField: ClosableTextField!
     
     @IBAction func saveButtonPressed(_ sender: Any) {
         var id: String = ""
-        Alamofire.request(Constants.serverURL.serverURL, method: .post, parameters: [:], headers: ["natdis-name":nameTextField.text!,"natdis-age":ageTextField.text!,"natdis-homeaddr":homeAddressTextField.text!,"natdis-bloodtype":selectedPickerData]).responseString { (response:DataResponse<String>) in
+        Alamofire.request(Constants.serverURL.serverURL, method: .post, parameters: [:], headers: ["natdis-name":nameTextField.text!,"natdis-age":ageTextField.text!,"natdis-homeaddr":homeAddressTextField.text!,"natdis-bloodtype":selectedPickerData,"natdis-specneeds":specneedsTextField.text!,"natdis-other":otherTextField.text!]).responseString { (response:DataResponse<String>) in
             let responseString = response.description
             print("Response:",responseString)
             if (responseString.components(separatedBy: ":")[0] == "SUCCESS") {

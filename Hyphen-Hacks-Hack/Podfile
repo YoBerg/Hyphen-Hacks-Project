@@ -3,5 +3,4 @@ use_frameworks!
 
 target 'Hyphen-Hacks-Hack' do
     pod 'Alamofire'
-    pod 'SwiftyJSON'
 end
