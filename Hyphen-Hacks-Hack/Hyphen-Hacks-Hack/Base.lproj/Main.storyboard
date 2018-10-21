@@ -62,7 +62,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="N1M-J0-xnF"/>
                                 </constraints>
-                                <state key="normal" title="Button">
+                                <state key="normal" title="Link to Site">
                                     <color key="titleColor" red="0.23529411759999999" green="0.25490196079999999" blue="0.28627450980000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
