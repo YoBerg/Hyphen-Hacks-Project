@@ -448,8 +448,8 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HOW IS YOUR CONDITION?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A9c-sl-ldY">
-                                <rect key="frame" x="20" y="145" width="335" height="127.5"/>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="53"/>
+                                <rect key="frame" x="20" y="145" width="335" height="120"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="50"/>
                                 <color key="textColor" red="0.23529411759999999" green="0.25490196079999999" blue="0.28627450980000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -467,6 +467,7 @@
                         <viewLayoutGuide key="safeArea" id="4Pf-22-NtV"/>
                     </view>
                     <connections>
+                        <outlet property="conditionLabel" destination="A9c-sl-ldY" id="UlT-Pb-tnu"/>
                         <segue destination="WcH-yM-u1I" kind="unwind" identifier="unwindSegueToVC1" unwindAction="unwindToVC1WithSegue:" id="aDY-jK-eHo"/>
                     </connections>
                 </viewController>

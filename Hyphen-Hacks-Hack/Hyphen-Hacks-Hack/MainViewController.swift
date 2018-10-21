@@ -34,7 +34,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate {
         lpollTimer = Timer.scheduledTimer(withTimeInterval: 5, repeats: true) { (Timer) in
             Alamofire.request(Constants.serverURL.serverURL, method: .post, parameters: [:], headers: ["natdis-lpoll":"","natdis-id":id]).responseString(completionHandler: { (response:DataResponse<String>) in
                 if (response.description == "SUCCESS: True") {
-                    self.locationManager.requestLocation()
+                    self.goToAreYouOkay()
                 }
                 print("sending id",id)
                 print("lpoll-response:",response.description)
